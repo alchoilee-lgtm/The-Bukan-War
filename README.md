@@ -6,9 +6,9 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 
 <table>
   <tr>
-    <td bgcolor="#FFFF00" align="center" width="300" height="60">
+    <td bgcolor="#FFEF00" align="center" width="300" height="60">
       <a href="https://itch.io">
-        <font size="6" color="#58a6ff"><b>Play The Bukan War</b></font>
+        <font size="6" color="#FFEF00"><b>Play The Bukan War</b></font>
       </a>
     </td>
   </tr>
