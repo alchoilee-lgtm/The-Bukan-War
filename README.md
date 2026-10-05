@@ -5,6 +5,9 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 
 
 
+
+
+
 <table>
   <tr>
     <td bgcolor="#FFEF00" align="center" width="300" height="60">
