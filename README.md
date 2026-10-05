@@ -5,7 +5,7 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 
 
 <p align="center">
-  <a href="https://inzpire.itch.io/the-bukan-war"><kbd> <b>The Bukan War</b> </kbd></a>
+  <h2><a href="https://inzpire.itch.io/the-bukan-war"><kbd> The Bukan War </kbd></a></h2>
 </p>
 
 
