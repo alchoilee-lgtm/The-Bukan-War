@@ -6,7 +6,7 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 
 
 
-## 🎮 [**▶ Play The Bukan War on Itch.io**](https://itch.io)
+## 🎮 [**▶ Play The Bukan War on Itch.io**](https://inzpire.itch.io/the-bukan-war)
 
 ## Quickstart
 - Click the Button above to open the game
