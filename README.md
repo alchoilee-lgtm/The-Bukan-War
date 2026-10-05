@@ -12,7 +12,7 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
   <tr>
     <td bgcolor="#FFEF00" align="center" width="300" height="80">
       <a href="https://inzpire.itch.io/the-bukan-war">
-        <font size="10" color="#FFEF00"><b>Play The Bukan War</b></font>
+        <font size="20" color="#FFEF00"><b>Play The Bukan War</b></font>
       </a>
     </td>
   </tr>
