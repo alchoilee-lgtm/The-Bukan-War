@@ -6,17 +6,7 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 
 
 
-## 
-
-<table>
-  <tr>
-    <td bgcolor="#FFEF00" align="center" width="300" height="80">
-      <a href="https://inzpire.itch.io/the-bukan-war">
-        <font size="20" color="#FFEF00"><b>Play The Bukan War</b></font>
-      </a>
-    </td>
-  </tr>
-</table>
+## 🎮 [**▶ Play The Bukan War on Itch.io**](https://itch.io)
 
 ## Quickstart
 - Click the Button above to open the game
