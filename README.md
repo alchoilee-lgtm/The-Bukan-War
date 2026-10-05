@@ -14,3 +14,8 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
     </td>
   </tr>
 </table>
+
+## Quickstart
+Click the Button above to open the game
+Press **Run Game** to play the game
+
