@@ -15,7 +15,27 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
   </tr>
 </table>
 
-# Quickstart
+## Quickstart
 Click the Button above to open the game
 Press **Run Game** to play the game
 
+## Controls
+Use WASD or Arrow Keys to move
+Click to shoot in the direction you are facing
+Shoot at the Drunk Beans (Yellow Stars) to gain more Ammo/Energy
+Shoot the Drunk Beans when your energy bar is full, to gain health
+Dodge the Boss's attacks
+
+## Features
+Boss Fight
+Juicy particles and screen shake
+Different boss attacks
+Bukan War story
+
+## Technical
+A text to bullet converter, which works by saving 5x5 bitmap codes for each letter in a dictionary, and shooting them in the correct order
+
+## Credits
+Pixabay for the Soundtracks
+JSFXR for the Sound Effects
+Devworm for Particle Tutorial
