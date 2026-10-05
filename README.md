@@ -10,9 +10,9 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 
 <table>
   <tr>
-    <td bgcolor="#FFEF00" align="center" width="300" height="60">
+    <td bgcolor="#FFEF00" align="center" width="300" height="80">
       <a href="https://inzpire.itch.io/the-bukan-war">
-        <font size="6" color="#FFEF00"><b>Play The Bukan War</b></font>
+        <font size="10" color="#FFEF00"><b>Play The Bukan War</b></font>
       </a>
     </td>
   </tr>
@@ -42,3 +42,4 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 - Pixabay for the Soundtracks
 - JSFXR for the Sound Effects
 - Devworm for Particle Tutorial
+- Family for the Voice Acting
