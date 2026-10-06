@@ -35,7 +35,7 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 - My family did the voice acting
 
 ## What Ai did
-- It made Bitmap codes for every letter in the alphabet, I could do it by hand but it would take a long time
+- It made Bitmap codes for letters in the alphabet, I could do it by hand but it would take a long time
 - It helped me understand how to do certain stuff (for example, how to make Global Variables) since I am new to Godot
 
 ## Credits
