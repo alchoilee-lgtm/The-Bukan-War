@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://nykmofg32hxb"]
+
+[ext_resource type="Texture2D" uid="uid://du3yh6tfiwk3a" path="res://Frame_4.svg" id="1_midgr"]
+[ext_resource type="PackedScene" uid="uid://d3jmd54x8mxay" path="res://world_environment.tscn" id="2_8qsis"]
+[ext_resource type="Script" uid="uid://kjsuxu58bf46" path="res://frame_4.gd" id="2_ps8su"]
+[ext_resource type="AudioStream" uid="uid://bkyhdkjnaglvr" path="res://5 (1).wav" id="3_8qsis"]
+
+[node name="Frame4" type="Sprite2D" unique_id=1547355293]
+modulate = Color(1.117626, 1.117626, 1.117626, 1)
+z_index = 3
+position = Vector2(591.0385, 336.4375)
+scale = Vector2(0.2008961, 0.20089607)
+texture = ExtResource("1_midgr")
+script = ExtResource("2_ps8su")
+
+[node name="WorldEnvironment" parent="." unique_id=1944263431 instance=ExtResource("2_8qsis")]
+
+[node name="Timer" type="Timer" parent="." unique_id=603582275]
+wait_time = 39.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=417537221]
+wait_time = 50.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=959745868]
+stream = ExtResource("3_8qsis")
+volume_db = 14.067
+pitch_scale = 1.29
+
+[node name="Label" type="Label" parent="." unique_id=639883960]
+offset_left = -2752.8584
+offset_top = 401.0158
+offset_right = 180.1416
+offset_bottom = 1438.0159
+theme_override_font_sizes/font_size = 150
+text = "Three hours later, a spaceship carrying 
+the Beans' only soldiers ties the statue
+ to their ship and flies toward their
+planet.
+"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

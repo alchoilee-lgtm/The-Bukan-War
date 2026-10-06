@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://k016py0h38t1"]
+
+[ext_resource type="Script" uid="uid://4sf20kbqbbh4" path="res://game.gd" id="1_7jktm"]
+[ext_resource type="PackedScene" uid="uid://c38cmu4edgxns" path="res://player.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://n48qx018u2ro" path="res://b_gparticles.tscn" id="2_7jktm"]
+[ext_resource type="PackedScene" uid="uid://cbky6atgkywcm" path="res://boss.tscn" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://dnnr4jvjg8ctb" path="res://background.gd" id="2_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://d3jmd54x8mxay" path="res://world_environment.tscn" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://bqd1ngy8wsiv2" path="res://camera_2d.gd" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://dmdab8gqupojn" path="res://music.tscn" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://cjxt21b5j43df" path="res://ded_screeen.gd" id="7_hve3p"]
+[ext_resource type="Texture2D" uid="uid://c6x4ocylc0s1f" path="res://DED SCREEEN (3).svg" id="9_vef74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eote"]
+size = Vector2(183, 659)
+
+[node name="game" type="Node2D" unique_id=1703593405]
+script = ExtResource("1_7jktm")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1669257581]
+offset_left = -260.0
+offset_top = -276.0
+offset_right = 1286.0
+offset_bottom = 833.0
+color = Color(0, 0.007843138, 0.1254902, 1)
+script = ExtResource("2_j5wjh")
+
+[node name="BGparticles" parent="Background" unique_id=672078718 instance=ExtResource("2_7jktm")]
+position = Vector2(1452, 602)
+
+[node name="Boss" parent="." unique_id=123393933 instance=ExtResource("2_feb5d")]
+position = Vector2(1091, 315)
+
+[node name="Player" parent="." unique_id=790254536 instance=ExtResource("1_e2o6t")]
+position = Vector2(140, 321)
+
+[node name="DedScreeen" type="Sprite2D" parent="Player" unique_id=419922534]
+visible = false
+top_level = true
+z_index = 1
+position = Vector2(595.00006, 322)
+scale = Vector2(0.19806914, 0.19806914)
+texture = ExtResource("9_vef74")
+script = ExtResource("7_hve3p")
+
+[node name="WorldEnvironment" parent="." unique_id=1944263431 instance=ExtResource("3_feb5d")]
+
+[node name="Energy" type="Timer" parent="." unique_id=1287292683]
+wait_time = 4.379
+autostart = true
+
+[node name="Bean Spawn" type="Timer" parent="." unique_id=1021552610]
+wait_time = 5.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=771623189]
+position = Vector2(577, 325)
+script = ExtResource("6_ryrav")
+
+[node name="MUSIC" parent="." unique_id=54702085 instance=ExtResource("7_eow3j")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2015879774]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1815005589]
+position = Vector2(1064.5, 317)
+shape = SubResource("RectangleShape2D_2eote")
+
+[connection signal="timeout" from="Energy" to="." method="_on_energy_timeout"]
+[connection signal="timeout" from="Bean Spawn" to="." method="_on_bean_spawn_timeout"]

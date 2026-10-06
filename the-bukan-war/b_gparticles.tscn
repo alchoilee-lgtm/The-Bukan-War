@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://n48qx018u2ro"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_onrkg"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 500, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(-1, 0, 0)
+spread = 5.357
+initial_velocity_min = 914.06
+initial_velocity_max = 1000.0
+gravity = Vector3(-10, 0, 0)
+scale_min = 5.0
+scale_max = 10.0
+
+[node name="BGparticles" type="GPUParticles2D" unique_id=672078718]
+position = Vector2(1217, 329)
+amount = 50
+lifetime = 1.9400000000000002
+process_material = SubResource("ParticleProcessMaterial_onrkg")

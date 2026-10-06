@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dg8nv8he272q8"]
+
+[ext_resource type="Script" uid="uid://cvxkgvaih5n5f" path="res://boss_bomb.gd" id="1_l6bvc"]
+[ext_resource type="Texture2D" uid="uid://canf8trf8axdm" path="res://Bomb (3).svg" id="2_l6bvc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2eote"]
+radius = 28.635643
+
+[node name="Boss Bomb" type="Area2D" unique_id=1114396655]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_l6bvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140893380]
+shape = SubResource("CircleShape2D_2eote")
+
+[node name="Bomb(3)" type="Sprite2D" parent="." unique_id=1641546740]
+modulate = Color(0.9490196, 0.9490196, 0.9490196, 1)
+self_modulate = Color(1.2604681, 1.2604681, 1.2604681, 1)
+position = Vector2(-4.7683716e-07, -8)
+scale = Vector2(0.39661652, 0.39661652)
+texture = ExtResource("2_l6bvc")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ca78xd4fxglk3"]
+
+[ext_resource type="Script" uid="uid://bt63e54p0g280" path="res://boss bullet.gd" id="1_827h2"]
+[ext_resource type="Texture2D" uid="uid://bnvfiwv03wi7h" path="res://Boss Bullet.svg" id="2_827h2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2eote"]
+radius = 13.038404
+
+[node name="bullet" type="Area2D" unique_id=768050272]
+modulate = Color(1.1, 1.1, 1.1, 1)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_827h2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1318731308]
+shape = SubResource("CircleShape2D_2eote")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1967571421]
+
+[node name="BossBullet" type="Sprite2D" parent="." unique_id=1213056105]
+texture = ExtResource("2_827h2")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

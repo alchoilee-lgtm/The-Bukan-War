@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bsqo874sx0k42"]
+
+[ext_resource type="Script" uid="uid://cf24dstta01jl" path="res://shockwave_gen.gd" id="1_gwtop"]
+
+[node name="Shockwave Gen" type="Node2D" unique_id=289601557]
+position = Vector2(927, 319)
+script = ExtResource("1_gwtop")

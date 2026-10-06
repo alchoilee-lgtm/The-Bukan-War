@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bxl13s1nhc1x5"]
+
+[ext_resource type="Texture2D" uid="uid://b2svmluf8kv0f" path="res://Trans.svg" id="1_reytq"]
+[ext_resource type="Script" uid="uid://c7xurcenfwqbe" path="res://trans_in.gd" id="2_02xka"]
+
+[node name="Trans In" type="Sprite2D" unique_id=1324449948]
+position = Vector2(592, 966)
+scale = Vector2(1.6576763, 1.5883721)
+texture = ExtResource("1_reytq")
+script = ExtResource("2_02xka")

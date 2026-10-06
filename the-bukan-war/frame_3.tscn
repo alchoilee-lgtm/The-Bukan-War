@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bk4l6qxdhimov"]
+
+[ext_resource type="Texture2D" uid="uid://dc13lexdbdr8j" path="res://Frame_3.svg" id="1_ipi13"]
+[ext_resource type="Script" uid="uid://o6xdcnh5fhuu" path="res://frame_3.gd" id="2_coa0w"]
+[ext_resource type="PackedScene" uid="uid://d3jmd54x8mxay" path="res://world_environment.tscn" id="2_mdkow"]
+[ext_resource type="AudioStream" uid="uid://cw7uuqck8fhc" path="res://4.wav" id="3_mdkow"]
+
+[node name="Frame3" type="Sprite2D" unique_id=795385911]
+modulate = Color(1.0951535, 1.0951535, 1.0951535, 1)
+z_index = 4
+position = Vector2(590.7624, 286)
+scale = Vector2(0.20082308, 0.20082305)
+texture = ExtResource("1_ipi13")
+script = ExtResource("2_coa0w")
+
+[node name="WorldEnvironment" parent="." unique_id=1944263431 instance=ExtResource("2_mdkow")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=758846641]
+stream = ExtResource("3_mdkow")
+volume_db = 10.545
+pitch_scale = 1.3
+
+[node name="Timer2" type="Timer" parent="." unique_id=150954816]
+wait_time = 37.0
+one_shot = true
+autostart = true
+
+[node name="Timer" type="Timer" parent="." unique_id=206501131]
+wait_time = 25.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=395759970]
+offset_left = -2722.6072
+offset_top = -1215.0
+offset_right = -918.12634
+offset_bottom = -635.25305
+theme_override_font_sizes/font_size = 150
+text = "He puts the most courageous warrior, 
+you, into a glamorous beanthena statue 
+as a fake peace offering and leaves it 
+stranded in space.
+"
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

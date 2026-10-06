@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c1xuv347ahbf7"]
+
+[ext_resource type="Script" uid="uid://dlqxaenxqmjqp" path="res://story.gd" id="1_76aiv"]
+[ext_resource type="AudioStream" uid="uid://d1lvyy5tef2k" path="res://echoes_of_lumen-ominous-music-595730.mp3" id="2_27gb3"]
+[ext_resource type="Script" uid="uid://dnnr4jvjg8ctb" path="res://background.gd" id="3_bwkhw"]
+
+[node name="story" type="Node2D" unique_id=737234424]
+script = ExtResource("1_76aiv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1925040148]
+stream = ExtResource("2_27gb3")
+volume_db = 3.014
+autoplay = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=1699628954]
+z_index = -1
+offset_left = -51.0
+offset_top = -48.0
+offset_right = 1190.0
+offset_bottom = 707.0
+color = Color(0, 0.007843138, 0.1254902, 1)
+script = ExtResource("3_bwkhw")
+
+[node name="Timer" type="Timer" parent="." unique_id=1197391820]
+wait_time = 70.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

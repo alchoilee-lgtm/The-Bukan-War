@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cbky6atgkywcm"]
+
+[ext_resource type="Script" uid="uid://d25in2ba8b1ft" path="res://boss.gd" id="1_6xxrv"]
+[ext_resource type="Texture2D" uid="uid://bj15p505neufv" path="res://Bean Pod (1).svg" id="2_6xxrv"]
+[ext_resource type="AudioStream" uid="uid://bt3v8cs7jhw4j" path="res://explosion.wav" id="2_skx2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eote"]
+size = Vector2(124, 538)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1i15"]
+bg_color = Color(0.7176471, 0.73333335, 1, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnbgr"]
+bg_color = Color(1, 1, 0.40392157, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glark"]
+size = Vector2(123, 539)
+
+[node name="boss" type="CharacterBody2D" unique_id=1500059677]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_6xxrv")
+
+[node name="explosion" type="AudioStreamPlayer" parent="." unique_id=1589359370]
+stream = ExtResource("2_skx2t")
+volume_db = -23.37
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795701418]
+position = Vector2(-51, -5)
+shape = SubResource("RectangleShape2D_2eote")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1624736002]
+self_modulate = Color(1.05, 1.05, 1.05, 1)
+top_level = true
+offset_left = -776.0
+offset_top = -278.0
+offset_right = -277.0
+offset_bottom = -235.0
+theme_override_colors/font_color = Color(0, 0, 0.03529412, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/background = SubResource("StyleBoxFlat_o1i15")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lnbgr")
+max_value = 1500.0
+step = 5.0
+value = 500.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Attack" type="Timer" parent="." unique_id=2020823733]
+wait_time = 5.0
+autostart = true
+
+[node name="BeanPod" type="Sprite2D" parent="." unique_id=19939138]
+modulate = Color(1.1, 1.1, 1.1, 1)
+self_modulate = Color(1.3, 1.3, 1.3, 1)
+position = Vector2(-39, -1)
+rotation = -1.5683357
+scale = Vector2(1.1721249, 0.95902324)
+texture = ExtResource("2_6xxrv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1684909943]
+collision_layer = 6
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=208126542]
+position = Vector2(-40, -6)
+shape = SubResource("RectangleShape2D_glark")
+
+[connection signal="timeout" from="Attack" to="." method="_on_first_attack_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

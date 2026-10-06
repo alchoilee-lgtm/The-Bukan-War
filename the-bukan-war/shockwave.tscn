@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://diu8jv3pq2o17"]
+
+[ext_resource type="Script" uid="uid://q8bol0jfpr4c" path="res://shockwave.gd" id="1_yccnn"]
+[ext_resource type="Texture2D" uid="uid://baskeuoatk4rx" path="res://Sparky (1).svg" id="2_yccnn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2eote"]
+radius = 17.029387
+
+[node name="Shockwave" type="Area2D" unique_id=506547538]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_yccnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1827622260]
+shape = SubResource("CircleShape2D_2eote")
+
+[node name="Sparky(1)" type="Sprite2D" parent="." unique_id=1925939815]
+modulate = Color(1.235258, 1.235258, 1.235258, 1)
+scale = Vector2(0.27326393, 0.2732639)
+texture = ExtResource("2_yccnn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1406080875]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c8ep0t2f1nc0m"]
+
+[ext_resource type="Texture2D" uid="uid://do4giqpa71l6j" path="res://Frame_2.svg" id="1_3wgx8"]
+[ext_resource type="Script" uid="uid://ded10b05fyf57" path="res://frame_2.gd" id="2_8wgxd"]
+[ext_resource type="PackedScene" uid="uid://d3jmd54x8mxay" path="res://world_environment.tscn" id="2_tubte"]
+[ext_resource type="AudioStream" uid="uid://jpdqgjgvkl3b" path="res://3.wav" id="4_pexts"]
+
+[node name="Frame2" type="Sprite2D" unique_id=986320216]
+modulate = Color(1.2108967, 1.2108967, 1.2108967, 1)
+z_index = 5
+position = Vector2(584.1206, 284.50003)
+scale = Vector2(0.19784084, 0.2018122)
+texture = ExtResource("1_3wgx8")
+script = ExtResource("2_8wgxd")
+
+[node name="Timer" type="Timer" parent="." unique_id=67249849]
+wait_time = 17.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=963251804]
+wait_time = 23.0
+one_shot = true
+autostart = true
+
+[node name="WorldEnvironment" parent="." unique_id=1944263431 instance=ExtResource("2_tubte")]
+
+[node name="3" type="AudioStreamPlayer" parent="." unique_id=896745115]
+stream = ExtResource("4_pexts")
+volume_db = 2.01
+pitch_scale = 1.3
+
+[node name="Label" type="Label" parent="." unique_id=127810351]
+offset_left = -2699.749
+offset_top = -1166.9266
+offset_right = -895.2682
+offset_bottom = -587.1797
+theme_override_font_sizes/font_size = 150
+text = "However, Bukusseus 
+has a GENIUS idea"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

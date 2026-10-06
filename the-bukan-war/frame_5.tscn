@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c3wsb586fq33m"]
+
+[ext_resource type="Texture2D" uid="uid://r0j2817vem8k" path="res://costume2 (10).svg" id="1_55ilo"]
+[ext_resource type="Script" uid="uid://bkb5gcrvg6c8m" path="res://frame_5.gd" id="2_55ilo"]
+[ext_resource type="PackedScene" uid="uid://d3jmd54x8mxay" path="res://world_environment.tscn" id="2_qtd0t"]
+[ext_resource type="AudioStream" uid="uid://jyevl2s4jicw" path="res://6 (1).wav" id="5_21x64"]
+
+[node name="Frame5" type="Sprite2D" unique_id=1833908641]
+modulate = Color(1.0518116, 1.0518116, 1.0518116, 1)
+z_index = 2
+position = Vector2(574, 325)
+scale = Vector2(0.16876931, 0.1841808)
+texture = ExtResource("1_55ilo")
+script = ExtResource("2_55ilo")
+
+[node name="WorldEnvironment" parent="." unique_id=1944263431 instance=ExtResource("2_qtd0t")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=894282585]
+stream = ExtResource("5_21x64")
+volume_db = 11.053
+pitch_scale = 1.3
+
+[node name="Timer" type="Timer" parent="." unique_id=623882907]
+wait_time = 52.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=671677711]
+wait_time = 58.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=1177214226]
+offset_left = -3252.961
+offset_top = 1183.6196
+offset_right = -82.95337
+offset_bottom = 2220.6196
+theme_override_font_sizes/font_size = 150
+text = "Elated, 
+they enjoy a massive feast
+"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

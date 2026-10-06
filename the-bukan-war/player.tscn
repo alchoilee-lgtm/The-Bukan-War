@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://c38cmu4edgxns"]
+
+[ext_resource type="Script" uid="uid://bnfj23bdwwiul" path="res://player.gd" id="1_dl81w"]
+[ext_resource type="Texture2D" uid="uid://cly4huugxwyyr" path="res://Buku Buku (1).svg" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://c7o45h76f8p7c" path="res://laserShoot.wav" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2eote"]
+radius = 38.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xxrv"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 0.89411765, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skx2t"]
+bg_color = Color(0.9137255, 0.6, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qj28"]
+radius = 38.118237
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2eote"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qj28"]
+bg_color = Color(1, 0.90588236, 0.27450982, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="Player" type="CharacterBody2D" unique_id=195804295]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_dl81w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1994907151]
+shape = SubResource("CircleShape2D_2eote")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=260007518]
+modulate = Color(1.05, 1.05, 1.05, 1)
+top_level = true
+offset_left = -63.0
+offset_top = -10.0
+offset_right = 64.0
+offset_bottom = 10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6xxrv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_skx2t")
+max_value = 150.0
+value = 50.0
+show_percentage = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=805562769]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2040399267]
+shape = SubResource("CircleShape2D_7qj28")
+
+[node name="BukuBuku(1)" type="Sprite2D" parent="." unique_id=581265157]
+modulate = Color(1.1, 1.1, 1.1, 1)
+position = Vector2(2.9999998, -1)
+scale = Vector2(0.34898478, 0.34898475)
+texture = ExtResource("2_onrkg")
+
+[node name="EnergyBar" type="ProgressBar" parent="." unique_id=180456219]
+self_modulate = Color(1.1, 1.1, 1.1, 1)
+top_level = true
+offset_left = 38.0
+offset_top = 396.0
+offset_right = 100.0
+offset_bottom = 599.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2eote")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7qj28")
+max_value = 10.0
+value = 5.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="EnergyBar" unique_id=2112040497]
+modulate = Color(1.5084606, 1.5084606, 1.5084606, 1)
+layout_mode = 0
+offset_left = -7.0
+offset_top = 209.0
+offset_right = 71.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 20
+text = "ENERGY"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=478978664]
+stream = ExtResource("3_i3pqv")
+volume_db = -22.609
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

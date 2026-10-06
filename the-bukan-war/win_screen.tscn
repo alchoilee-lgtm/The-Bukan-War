@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://6ago4anyl8s6"]
+
+[ext_resource type="Texture2D" uid="uid://diyksm78n854x" path="res://Win Screen (2).svg" id="1_l5t5q"]
+[ext_resource type="Script" uid="uid://d0bhu6rx6do5q" path="res://win_screen.gd" id="2_l5t5q"]
+[ext_resource type="AudioStream" uid="uid://coqe7x5ls587w" path="res://tatamusic-winner-winner-music-599003.mp3" id="2_wmwda"]
+[ext_resource type="PackedScene" uid="uid://dvroqd7sjtwjk" path="res://bulletparticles.tscn" id="4_1txte"]
+
+[sub_resource type="Curve" id="Curve_26557"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.32075477), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_luvg0"]
+curve = SubResource("Curve_26557")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5hoe6"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 31.409
+initial_velocity_min = 178.12999
+initial_velocity_max = 251.51999
+gravity = Vector3(0, 1000, 0)
+scale_min = 0.0
+scale_max = 27.519999
+scale_curve = SubResource("CurveTexture_luvg0")
+color = Color(1, 0.36, 0.36, 1)
+hue_variation_min = -1.0
+hue_variation_max = 0.99999994
+
+[node name="WinScreen" type="Sprite2D" unique_id=1021549145]
+z_index = 10
+position = Vector2(556, 337)
+scale = Vector2(0.27067047, 0.27067038)
+texture = ExtResource("1_l5t5q")
+script = ExtResource("2_l5t5q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1111155520]
+z_index = -2
+offset_left = -2246.2734
+offset_top = -1644.066
+offset_right = 2275.83
+offset_bottom = 1381.1146
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=789938968]
+stream = ExtResource("2_wmwda")
+autoplay = true
+
+[node name="bullet particles" parent="." unique_id=51583656 instance=ExtResource("4_1txte")]
+z_index = -2
+position = Vector2(77.585205, 1448.2559)
+scale = Vector2(20.119545, 20.119553)
+emitting = true
+amount = 100
+lifetime = 2.6999999999999997
+one_shot = false
+explosiveness = 0.0
+process_material = SubResource("ParticleProcessMaterial_5hoe6")

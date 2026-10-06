@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bwp17n467uurr"]
+
+[ext_resource type="Texture2D" uid="uid://b2svmluf8kv0f" path="res://Trans.svg" id="1_qurmf"]
+[ext_resource type="Script" uid="uid://fmm8demf8ydi" path="res://trans_out.gd" id="2_nmba7"]
+
+[node name="Trans Out" type="Sprite2D" unique_id=1324449948]
+z_index = 7
+position = Vector2(592, 966)
+scale = Vector2(1.6576763, 1.5883721)
+texture = ExtResource("1_qurmf")
+script = ExtResource("2_nmba7")

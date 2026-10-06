@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://u7bpm6r74jsi"]
+
+[ext_resource type="Script" uid="uid://drjdd1eyr5ur5" path="res://letter.gd" id="1_5gbsb"]
+[ext_resource type="Texture2D" uid="uid://bxw48hdg3lsrq" path="res://Letter.svg" id="2_5gbsb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as6sg"]
+size = Vector2(30, 28)
+
+[node name="letter" type="Area2D" unique_id=1704098278]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_5gbsb")
+
+[node name="Letter" type="Sprite2D" parent="." unique_id=11869406]
+position = Vector2(-1.1920929e-07, 0.69767666)
+scale = Vector2(1.28, 0.6511628)
+texture = ExtResource("2_5gbsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1804352603]
+shape = SubResource("RectangleShape2D_as6sg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=465319989]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

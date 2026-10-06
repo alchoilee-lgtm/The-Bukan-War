@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://rdxomcrbqt38"]
+
+[ext_resource type="Texture2D" uid="uid://b4e356ov23yxp" path="res://Damage.svg" id="1_c7fco"]
+[ext_resource type="Script" uid="uid://gdsga2v0jj2l" path="res://damage.gd" id="2_rwnek"]
+
+[node name="Damage" type="Sprite2D" unique_id=611192523]
+position = Vector2(590, 319)
+scale = Vector2(0.3129752, 0.18605019)
+texture = ExtResource("1_c7fco")
+script = ExtResource("2_rwnek")

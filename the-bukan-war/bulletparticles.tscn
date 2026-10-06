@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dvroqd7sjtwjk"]
+
+[ext_resource type="Script" uid="uid://b806w0oe7o4q4" path="res://bulletparticles.gd" id="1_xnif8"]
+
+[sub_resource type="Curve" id="Curve_d8etm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.32075477), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_i1ypt"]
+curve = SubResource("Curve_d8etm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2eote"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(1, -9, 0)
+spread = 180.0
+initial_velocity_min = 123.079994
+initial_velocity_max = 123.079994
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 7.0
+scale_curve = SubResource("CurveTexture_i1ypt")
+hue_variation_min = -0.09000002
+hue_variation_max = 0.009999977
+
+[node name="bullet particles" type="GPUParticles2D" unique_id=51583656]
+emitting = false
+amount = 20
+lifetime = 0.49
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2eote")
+script = ExtResource("1_xnif8")

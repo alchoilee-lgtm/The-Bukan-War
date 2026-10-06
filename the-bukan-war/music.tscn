@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dmdab8gqupojn"]
+
+[ext_resource type="AudioStream" uid="uid://crjsfmwg0hb4" path="res://serhii_kliets-spaceship-arcade-shooter-game-background-soundtrack-318508.mp3" id="1_3h6ak"]
+
+[node name="MUSIC" type="Node2D" unique_id=54702085]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=607206209]
+stream = ExtResource("1_3h6ak")
+volume_db = -16.008
+autoplay = true

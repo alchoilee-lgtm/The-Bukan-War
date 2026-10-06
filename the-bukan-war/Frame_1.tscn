@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://g22dwg81sm6h"]
+
+[ext_resource type="Texture2D" uid="uid://s48q6sgerqaf" path="res://Frame_1.svg" id="1_bwkhw"]
+[ext_resource type="PackedScene" uid="uid://dvroqd7sjtwjk" path="res://bulletparticles.tscn" id="2_4nfae"]
+[ext_resource type="Script" uid="uid://d2ta4e8tunotd" path="res://frame_1.gd" id="2_hmwx8"]
+[ext_resource type="PackedScene" uid="uid://d3jmd54x8mxay" path="res://world_environment.tscn" id="3_4ukgh"]
+[ext_resource type="AudioStream" uid="uid://mkbryxu13cvy" path="res://1.wav" id="4_vxqhc"]
+[ext_resource type="AudioStream" uid="uid://ckwnq0qc6m87g" path="res://2.wav" id="5_hmwx8"]
+
+[sub_resource type="Curve" id="Curve_s70ul"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.32075477), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_s7v7q"]
+curve = SubResource("Curve_s70ul")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6he7n"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(1, -9, 0)
+spread = 180.0
+initial_velocity_min = 178.12999
+initial_velocity_max = 251.51999
+gravity = Vector3(0, 980, 0)
+scale_min = 0.0
+scale_max = 64.22
+scale_curve = SubResource("CurveTexture_s7v7q")
+hue_variation_min = -0.09000002
+hue_variation_max = 0.009999977
+
+[node name="Frame1" type="Sprite2D" unique_id=1989076045]
+modulate = Color(1.1635451, 1.1635451, 1.1635451, 1)
+z_index = 6
+position = Vector2(571.99994, 277.5)
+scale = Vector2(0.198134, 0.20159517)
+texture = ExtResource("1_bwkhw")
+script = ExtResource("2_hmwx8")
+
+[node name="bullet particles" parent="." unique_id=51583656 instance=ExtResource("2_4nfae")]
+position = Vector2(21.782959, 141.58972)
+scale = Vector2(5.445767, 5.445767)
+emitting = true
+amount = 100
+lifetime = 0.8
+one_shot = false
+explosiveness = 0.0
+process_material = SubResource("ParticleProcessMaterial_6he7n")
+
+[node name="WorldEnvironment" parent="." unique_id=1944263431 instance=ExtResource("3_4ukgh")]
+
+[node name="Timer1" type="Timer" parent="." unique_id=2090334812]
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=1387161193]
+wait_time = 9.0
+one_shot = true
+autostart = true
+
+[node name="Timer3" type="Timer" parent="." unique_id=918281573]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="1" type="AudioStreamPlayer" parent="." unique_id=175417451]
+stream = ExtResource("4_vxqhc")
+volume_db = -1.507
+pitch_scale = 1.3
+
+[node name="2" type="AudioStreamPlayer" parent="." unique_id=67751093]
+stream = ExtResource("5_hmwx8")
+volume_db = 12.62
+pitch_scale = 1.3
+
+[node name="Label" type="Label" parent="." unique_id=516138645]
+offset_left = -2594.2034
+offset_top = -1158.2618
+offset_right = -470.20337
+offset_bottom = -657.26184
+theme_override_font_sizes/font_size = 120
+text = "The year is 1200 BC. 
+The Beans and the Bukus have been 
+fighting for over 10 years"
+
+[node name="Label2" type="Label" parent="." unique_id=1668616375]
+offset_left = 600.60394
+offset_top = 1143.3805
+offset_right = 2724.604
+offset_bottom = 1644.3805
+theme_override_font_sizes/font_size = 120
+text = "Both sides are tired - but neither
+wants to lose"
+
+[node name="Label3" type="Label" parent="." unique_id=883642613]
+offset_left = -2775.899
+offset_top = 1535.2549
+offset_right = -651.8989
+offset_bottom = 2036.2549
+theme_override_font_sizes/font_size = 120
+text = "Space to skip the story"
+
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
