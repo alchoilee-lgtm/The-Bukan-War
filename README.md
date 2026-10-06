@@ -28,6 +28,16 @@ A game about a Buku shooting at the Bean’s spaceship while avoiding attacks, t
 ## Technical
 - A text to bullet converter, which works by saving 5x5 bitmap codes for each letter in a dictionary, and shooting them in the correct order
 
+## What I did
+- I made all the game art
+- I made most of the game code
+- I made all the storytelling
+- My family did the voice acting
+
+## What Ai did
+- It made Bitmap codes for every letter in the alphabet, I could do it by hand but it would take a long time
+- It helped me understand how to do certain stuff (for example, how to make Global Variables) since I am new to Godot
+
 ## Credits
 - Pixabay for the Soundtracks
 - JSFXR for the Sound Effects
